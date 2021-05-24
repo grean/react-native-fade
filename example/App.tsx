@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 
 // import Picker from '@grean/react-native-carousel-picker'
-import Fade from '@grean/react-native-fade'
+import Fade from '../src/Fade'
 
 // import ScaleText from '@grean/react-native-scale-text'
 
