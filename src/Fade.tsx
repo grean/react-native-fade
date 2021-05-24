@@ -87,7 +87,7 @@ const Fade = ({ items, textStyle, index }: FadeLabelProps) => {
             textStyle: {
               color: "white",
               textAlign: 'center',
-              fontFamily: 'cookie',
+              // fontFamily: 'cookie',
               ...textStyle,
             }
           }}

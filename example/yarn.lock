@@ -1263,10 +1263,10 @@
     lodash.pick "^4.4.0"
     lodash.template "^4.5.0"
 
-"@grean/react-native-scale-text@0.0.1-alpha.1":
-  version "0.0.1-alpha.2"
-  resolved "https://registry.yarnpkg.com/@grean/react-native-scale-text/-/react-native-scale-text-0.0.1-alpha.2.tgz#bb3b81ea990527c9cc8b5db1f99d012f98cfc298"
-  integrity sha512-6K7hIVlxiOZFeJkGVuMzJAbMNaybWpBuK1exi6jHONGfk2vPrLeBMa+Mu4zbiN03qmif2oUhe6wsnSLnepB2Dw==
+"@grean/react-native-scale-text@~0.0.1-alpha.2":
+  version "0.0.1-alpha.5"
+  resolved "https://registry.yarnpkg.com/@grean/react-native-scale-text/-/react-native-scale-text-0.0.1-alpha.5.tgz#34d8121a245c2ffcdba1658a4e8f43884ccc5fb8"
+  integrity sha512-goVJsj4HlX5MnKCqNydADZHyAPR94scB2lmpm5HC4riCU3LmhaJNgPYX9MHUI8Hl6KX6jx+E4G0rbllgs2vxWg==
 
 "@hapi/address@2.x.x":
   version "2.1.4"
