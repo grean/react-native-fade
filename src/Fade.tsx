@@ -75,6 +75,7 @@ const Fade = ({ items, textStyle, index }: FadeLabelProps) => {
         flex: 1,
         // justifyContent: 'space-evenly',
         justifyContent: 'center',
+        // backgroundColor: 'blue',
         // paddingTop: '0%',
       }, style]}>
         {/* <Text>{lorem}</Text> */}
