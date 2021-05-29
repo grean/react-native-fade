@@ -1,10 +1,12 @@
 import React, { useContext, useState } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 
-// import Picker from '@grean/react-native-carousel-picker'
+import Picker from '@grean/react-native-carousel-picker'
 import Fade from '../src/Fade'
 
-// import ScaleText from '@grean/react-native-scale-text'
+import ScaleText from '@grean/react-native-scale-text'
+import { useFonts } from 'expo-font'
+import { Easing } from 'react-native-reanimated'
 
 interface ProfilType {
   title: string
@@ -29,7 +31,7 @@ const App = () => {
   const currentItemIndex = 1
   const [itemIndex, setItemIndex] = useState(currentItemIndex);
   const display = "TOP_BOTTOM"
-  const spaceBetween = 1 / 3
+  const spaceBetween = 1 / 1.4
   const opacityRangeOut = [0, 0.6, 1, 0.6, 0]
   const scaleRangeOut = [0, 0.6, 1, 0.6, 0]
 
@@ -65,8 +67,8 @@ const App = () => {
   // const marginVerticalPercentage = 0
   // const marginVerticalPercentage = 0.2
   // const marginVerticalPercentage = 0.3
-  // const marginHorizontalPercentage = 0
-  const marginHorizontalPercentage = 0.1
+  const marginHorizontalPercentage = 0
+  // const marginHorizontalPercentage = 0.1
   const fontSize = 200
 
   const onChanged = (itemIndex: number) => {
@@ -74,40 +76,24 @@ const App = () => {
     console.log(`onChanged itemIndex ${itemIndex}`)
   }
 
+  let [fontsLoaded] = useFonts({
+    // 'dancingVar': require('./fonts/DancingScript-VariableFont_wght.ttf'),
+    'cookie': require('./fonts/Cookie-Regular.ttf'),
+  });
+
+  if (!fontsLoaded) {
+    return null
+  }
 
 
   return (
     <View style={{
       flex: 1
     }}>
-      <View style={styles.header}>
-        {/* <ScaleText
-          {...{
-            // allowFontScaling: true,
-            allowFontScaling: false,
-            fontSize: 250,
-            // onPress: () => (alert('lol')),
-            // padding: '2%',
-            textStyle: {
-              color: "white",
-              textAlign: 'center',
-              fontFamily: 'cookie',
-              padding: 10,
-              // backgroundColor: 'blue',
-              ...textShadow,
-            }
-          }}
-        >
-          {`Votre Profil ?`}
-        </ScaleText> */}
-        {/* <Label style={{ fontSize: 80, ...textShadow }}>
-          Votre Profil ?
-        </Label> */}
-      </View>
       <View style={[styles.picker, {
         // backgroundColor: 'blue',
       }]}>
-        {/* <Picker
+        <Picker
           {...{
             items,
             currentItemIndex,
@@ -132,49 +118,71 @@ const App = () => {
             },
             fontSize,
           }}
-        /> */}
+        />
       </View>
       <View style={styles.desc}>
         <Fade
           {...{
             index: itemIndex,
             items: profils,
-            textStyle: {
-              // padding: '5%',
-              // backgroundColor: 'green',
-              ...textShadow,
+            easing: Easing.bezier(0.25, 0.1, 0.25, 1),
+            timingInOut: [300, 100],//[in, out]
+            containerStyle: {
+              justifyContent: 'center',
+              // justifyContent: 'flex-end',
+              // backgroundColor: 'blue',
+              padding: 20,
             }
           }}
-        />
+        >
+          {(child: React.ReactNode) =>
+            <ScaleText
+              {...{
+                fontSize: 160,
+                padding: '6%',
+                textStyle: {
+                  color: "white",
+                  textAlign: 'center',
+                  fontFamily: 'cookie',
+                  ...textShadow,
+                }
+              }}
+            >
+              {child}
+            </ScaleText>
+            // <Text
+            //   {...{
+            //     padding: '6%',
+            //     style: {
+            //       fontSize: 30,
+            //       color: "white",
+            //       textAlign: 'center',
+            //       fontFamily: 'cookie',
+            //       ...textShadow,
+            //     }
+            //   }}
+            // >
+            //   {child}
+            // </Text>
+          }
+        </Fade>
       </View>
-      {/* <View style={styles.dots}>
-        <Text>lol</Text>
-      </View> */}
     </View>
   )
 }
 
 
 const styles = StyleSheet.create({
-  header: {
-    flex: 0.8,
-    // backgroundColor: 'rgba(100,100,100,0.5)',
-    justifyContent: 'center',
-  },
   picker: {
     flex: 1.2,
-    // backgroundColor: 'rgba(100,100,100,0.5)',
+    backgroundColor: 'rgba(100,100,100,0.5)',
     // justifyContent: 'center',
   },
   desc: {
     flex: 1.5,
-    // backgroundColor: 'rgba(100,100,100,0.5)',
+    backgroundColor: 'pink',
     // justifyContent: 'flex-start',
     // alignItems: 'center'
-  },
-  dots: {
-    flex: 0.2,
-    backgroundColor: 'orange',
   },
 })
 

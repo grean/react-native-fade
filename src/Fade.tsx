@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { View, Text, Button } from 'react-native'
-
-import ScaleText from '@grean/react-native-scale-text'
+import { StyleProp, View, Text, TextStyle, ViewStyle } from 'react-native'
 
 import Animated, {
   Easing,
@@ -11,25 +9,28 @@ import Animated, {
   withTiming,
 } from "react-native-reanimated";
 
-export type TextStyleType = {
-  fontFamily?: string
-  fontSize?: number
-  backgroundColor?: string
-  color?: string
-}
-
 export type TextItem = {
   title?: string
   desc?: string
 }
 
 interface FadeLabelProps {
+  children: (val: React.ReactNode) => React.ReactNode
+  containerStyle?: ViewStyle
+  easing: Animated.EasingFunction
   index: number
   items: TextItem[]
-  textStyle?: TextStyleType
+  timingInOut: number[],
 }
 
-const Fade = ({ items, textStyle, index }: FadeLabelProps) => {
+const Fade = ({
+  children,
+  containerStyle,
+  easing = Easing.bezier(0.25, 0.1, 0.25, 1),
+  index,
+  items,
+  timingInOut = [300, 100],
+}: FadeLabelProps) => {
   console.log(`FadeLabel`)
 
   const fade = useSharedValue(0)
@@ -49,11 +50,13 @@ const Fade = ({ items, textStyle, index }: FadeLabelProps) => {
     runOnJS(setOldValue)(index)
   }
 
+  // const [in, out] = timingInOut
+
   const style = useAnimatedStyle(() => {
     // console.log(`useAnimatedStyle in fade ${fade.value}`)
     const timingConfig = {
-      duration: (fade.value === 1 ? 300 : 100),
-      easing: Easing.bezier(0.25, 0.1, 0.25, 1),
+      duration: (fade.value === 1 ? timingInOut[0] : timingInOut[1]),
+      easing,
     }
     // const scale = withTiming(fade.value, timingConfig)
     const opacity = withTiming(fade.value, timingConfig, callbackAnimated)
@@ -67,58 +70,20 @@ const Fade = ({ items, textStyle, index }: FadeLabelProps) => {
     }
   })
 
-  const lorem = `oeuaouLorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta dolor totam tempore fuga porro, sint inventore unde laboriosam in voluptas velit maiores reprehenderit eaque rem officiis itaque repudiandae corporis esse?`
-
   return (
     <>
       <Animated.View style={[{
         flex: 1,
         // justifyContent: 'space-evenly',
         justifyContent: 'center',
-        // backgroundColor: 'blue',
         // paddingTop: '0%',
-      }, style]}>
-        {/* <Text>{lorem}</Text> */}
-        <ScaleText
-          {...{
-            // allowFontScaling: true,
-            fontSize: 120,
-            // onPress: () => (alert('lol')),
-            padding: '6%',
-            textStyle: {
-              color: "white",
-              textAlign: 'center',
-              // fontFamily: 'cookie',
-              ...textStyle,
-            }
-          }}
-        >
-          {items[oldValue].desc}
-        </ScaleText>
-        {/* <Text
-          style={[{
-            color: "white",
-            fontSize: 30,
-            textAlign: 'center',
-            fontFamily: 'cookie',
-          },
-            textStyle,
-          ]}
-        >
-          {items[oldValue].desc}
-        </Text> */}
-        {/* {item.title && <Text
-          style={[{
-            color: "white",
-            fontSize: 50,
-            textAlign: 'center',
-            fontFamily: 'cookie',
-          },
-            textStyle,
-          ]}
-        >
-          {item.title}
-        </Text>} */}
+      },
+        containerStyle,
+        style
+      ]}>
+        {
+          children(items[oldValue].desc)
+        }
       </Animated.View>
     </>
   )
