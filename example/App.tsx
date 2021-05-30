@@ -8,11 +8,6 @@ import ScaleText from '@grean/react-native-scale-text'
 import { useFonts } from 'expo-font'
 import { Easing } from 'react-native-reanimated'
 
-interface ProfilType {
-  title: string
-  desc: string
-}
-
 const textShadow = {
   textShadowColor: 'rgba(0, 0, 0, 0.75)',
   textShadowOffset: { width: 3, height: 3 },
@@ -27,6 +22,11 @@ const carouPicker = {
   borderTopWidth: 0,
 }
 
+type TextItem = {
+  title?: string
+  desc?: string
+}
+
 const App = () => {
   const currentItemIndex = 1
   const [itemIndex, setItemIndex] = useState(currentItemIndex);
@@ -35,7 +35,9 @@ const App = () => {
   const opacityRangeOut = [0, 0.6, 1, 0.6, 0]
   const scaleRangeOut = [0, 0.6, 1, 0.6, 0]
 
-  const profils = [
+
+
+  const profils: TextItem[] = [
     {
       "title": "Retraité sportif sportif",
       "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor."
@@ -64,9 +66,6 @@ const App = () => {
   const items = profils.map(item => item.title)
   const marginVerticalPercentage = 0
   // const marginVerticalPercentage = 0.2
-  // const marginVerticalPercentage = 0
-  // const marginVerticalPercentage = 0.2
-  // const marginVerticalPercentage = 0.3
   const marginHorizontalPercentage = 0
   // const marginHorizontalPercentage = 0.1
   const fontSize = 200
@@ -77,7 +76,6 @@ const App = () => {
   }
 
   let [fontsLoaded] = useFonts({
-    // 'dancingVar': require('./fonts/DancingScript-VariableFont_wght.ttf'),
     'cookie': require('./fonts/Cookie-Regular.ttf'),
   });
 
@@ -135,7 +133,7 @@ const App = () => {
             }
           }}
         >
-          {(child: React.ReactNode) =>
+          {(item) =>
             <ScaleText
               {...{
                 fontSize: 160,
@@ -148,7 +146,7 @@ const App = () => {
                 }
               }}
             >
-              {child}
+              {item.desc}
             </ScaleText>
             // <Text
             //   {...{

@@ -9,28 +9,23 @@ import Animated, {
   withTiming,
 } from "react-native-reanimated";
 
-export type TextItem = {
-  title?: string
-  desc?: string
-}
-
-interface FadeLabelProps {
-  children: (val: React.ReactNode) => React.ReactNode
+interface FadeLabelProps<T> {
+  children: (item: T) => React.ReactNode
   containerStyle?: ViewStyle
   easing: Animated.EasingFunction
   index: number
-  items: TextItem[]
+  items: T[]
   timingInOut: number[],
 }
 
-const Fade = ({
+const Fade = <T extends {}>({
   children,
   containerStyle,
   easing = Easing.bezier(0.25, 0.1, 0.25, 1),
   index,
   items,
   timingInOut = [300, 100],
-}: FadeLabelProps) => {
+}: FadeLabelProps<T>) => {
   console.log(`FadeLabel`)
 
   const fade = useSharedValue(0)
@@ -82,7 +77,7 @@ const Fade = ({
         style
       ]}>
         {
-          children(items[oldValue].desc)
+          children(items[oldValue])
         }
       </Animated.View>
     </>
