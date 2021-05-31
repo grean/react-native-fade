@@ -15,7 +15,7 @@ interface FadeLabelProps<T> {
   easing: Animated.EasingFunction
   index: number
   items: T[]
-  timingInOut: number[],
+  timingInOut: number[]
 }
 
 const Fade = <T extends {}>({

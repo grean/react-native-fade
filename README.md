@@ -1,5 +1,5 @@
 # react-native-fade
-Fade is a wrapper component that allows you apply a fade[in|out} effect on its render prop child<br/>
+Fade is a wrapper component that allows you apply a fade[in|out] effect on its render prop child<br/>
 It's a full typescript component using reanimated2. You can render any component you want and any items of your choice.<br/>
 The work is still in progress but you can use it and improve it if you want! PR are welcome.<br/>
 <br/>
@@ -8,6 +8,7 @@ The work is still in progress but you can use it and improve it if you want! PR 
 </a>
 
 ## Demo
+### Works on both iPhone and Android
 ![Example in protrait](./assets/demo.gif)
 
 ## Installation
