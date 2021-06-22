@@ -1,5 +1,5 @@
-import React, { useContext, useState } from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import React, { useState } from 'react'
+import { View, StyleSheet } from 'react-native'
 
 import Picker from '@grean/react-native-carousel-picker'
 import Fade from '../src/Fade'
@@ -23,19 +23,17 @@ const carouPicker = {
 }
 
 type TextItem = {
-  title?: string
-  desc?: string
+  title: string
+  desc: string
 }
 
 const App = () => {
-  const currentItemIndex = 1
-  const [itemIndex, setItemIndex] = useState(currentItemIndex);
+  const currentItemIndex = 2
+  const [index, setIndex] = useState(currentItemIndex);
   const display = "TOP_BOTTOM"
   const spaceBetween = 1 / 1.4
   const opacityRangeOut = [0, 0.6, 1, 0.6, 0]
   const scaleRangeOut = [0, 0.6, 1, 0.6, 0]
-
-
 
   const profils: TextItem[] = [
     {
@@ -70,9 +68,9 @@ const App = () => {
   // const marginHorizontalPercentage = 0.1
   const fontSize = 200
 
-  const onChanged = (itemIndex: number) => {
-    setItemIndex(itemIndex)
-    console.log(`onChanged itemIndex ${itemIndex}`)
+  const onChanged = (newIndex: number) => {
+    console.log(`onChanged newIndex ${newIndex}`)
+    setIndex(newIndex)
   }
 
   let [fontsLoaded] = useFonts({
@@ -82,7 +80,6 @@ const App = () => {
   if (!fontsLoaded) {
     return null
   }
-
 
   return (
     <View style={{
@@ -94,7 +91,7 @@ const App = () => {
         <Picker
           {...{
             items,
-            currentItemIndex,
+            index,
             onChanged,
             marginVerticalPercentage,
             marginHorizontalPercentage,
@@ -121,7 +118,7 @@ const App = () => {
       <View style={styles.desc}>
         <Fade
           {...{
-            index: itemIndex,
+            index,
             items: profils,
             easing: Easing.bezier(0.25, 0.1, 0.25, 1),
             timingInOut: [300, 100],//[in, out]

@@ -1263,22 +1263,22 @@
     lodash.pick "^4.4.0"
     lodash.template "^4.5.0"
 
-"@grean/react-native-carousel-picker@~0.0.1-alpha.4":
-  version "0.0.1-alpha.4"
-  resolved "https://registry.yarnpkg.com/@grean/react-native-carousel-picker/-/react-native-carousel-picker-0.0.1-alpha.4.tgz#90a3ea52229256e0ce4d8b2db2396c4c0aeab252"
-  integrity sha512-LlKurAGeHsgrTAda37cDSr67rIctCoX348dcFzZM1H7sRANjlvg2bgjRZENhHvnzgW1qGTgH4iPkeowRLCbSIw==
+"@grean/react-native-carousel-picker@^0.0.1-alpha.10":
+  version "0.0.1-alpha.10"
+  resolved "https://registry.yarnpkg.com/@grean/react-native-carousel-picker/-/react-native-carousel-picker-0.0.1-alpha.10.tgz#9d1a94ca6e1cb37b8e4e4dd8ae3de0a0d89f7e32"
+  integrity sha512-bGnPSEuP3hZ29UiERnugZa6x3VtaqdS8QMKrA7KCstKZZRO28Mfm2xO3IwasdaWk2qYCclFWd4txDtyc+nRunA==
 
-"@grean/react-native-metro-config-app-example@~0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@grean/react-native-metro-config-app-example/-/react-native-metro-config-app-example-0.0.3.tgz#24accfcba08078de5741175a154bd2959c92f873"
-  integrity sha512-LLIKv5R6qJ4HiIXd1fhsdQEtJyH2hnw70nVzaqte7cVW/uv/ILzw9aOUGJswrsFZf+5j6PjoVsM++RNizHQkww==
+"@grean/react-native-metro-config-app-example@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@grean/react-native-metro-config-app-example/-/react-native-metro-config-app-example-0.0.4.tgz#7bdba0b3e28a3e3ffc08a3132e6678a33b3fe5aa"
+  integrity sha512-tqtNpRFKD6K8p3pRdkE1fOqXZybz2dgHDOEE5Su7pt9CIaCpVLWeTG3V60JuVoxNZc5L5ZveWR0BBZHSVjGJ3g==
   dependencies:
     metro-config "^0.66.0"
 
-"@grean/react-native-scale-text@~0.0.1-alpha.2":
-  version "0.0.1-alpha.5"
-  resolved "https://registry.yarnpkg.com/@grean/react-native-scale-text/-/react-native-scale-text-0.0.1-alpha.5.tgz#34d8121a245c2ffcdba1658a4e8f43884ccc5fb8"
-  integrity sha512-goVJsj4HlX5MnKCqNydADZHyAPR94scB2lmpm5HC4riCU3LmhaJNgPYX9MHUI8Hl6KX6jx+E4G0rbllgs2vxWg==
+"@grean/react-native-scale-text@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@grean/react-native-scale-text/-/react-native-scale-text-0.0.2.tgz#d3e27cba618ee4356d96ce07436c304e92cf48a4"
+  integrity sha512-ewXHZeKi0tcoQc8spe5rNfJ5bhw2V4R0sEEEgsAOMslJR0Ag7v3QzkSQiYyt4ehuXZeY69CNdbPoY/vECJWWxQ==
 
 "@hapi/address@2.x.x":
   version "2.1.4"
