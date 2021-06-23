@@ -60,7 +60,7 @@ interface FadeLabelProps<T> {
 ```
 
 ## Testing
-See Expo example app for testing with hot-reload, you can directly modify the code's component and see how it looks immediately.
+See Expo example app for testing with hot-reload, you can directly modify the code's component and see how your modifications looks like immediately.
 ```sh
 git clone https://github.com/grean/react-native-fade.git
 cd react-native-fade && yarn
@@ -69,7 +69,7 @@ yarn ios
 ```
 
 ## About
-If you want to eat well and healthy, i recommand you to check out my mobile app [Dietethic.net](https://dietethic.net)<br/>
+If you want to eat well and healthy, i recommand you to check out our mobile app [Dietethic.net](https://dietethic.net)<br/>
 
 <a align="center" href="https://github.com/grean?tab=followers">
   <img src="https://img.shields.io/github/followers/grean?label=Follow%20%40grean&style=social" />

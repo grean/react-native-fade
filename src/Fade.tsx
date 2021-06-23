@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { StyleProp, View, Text, TextStyle, ViewStyle } from 'react-native'
+import { ViewStyle } from 'react-native'
 
 import Animated, {
   Easing,
@@ -32,16 +32,19 @@ const Fade = <T extends {}>({
   const [oldValue, setOldValue] = useState(index);
 
   useEffect(() => {
-    // console.log(`FadeLabel mounted`)
+    // console.log(`Fade effect index ${index}`)
     if (index === oldValue) {
+      // console.log(`Fade 1 index ${index}`)
       fade.value = 1
     } else {
+      // console.log(`Fade 0 index ${index}`)
       fade.value = 0
     }
   });
 
   const callbackAnimated = () => {
     'worklet'
+    console.log(`worklet fade ${index}`)
     runOnJS(setOldValue)(index)
   }
 
