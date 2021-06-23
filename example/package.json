@@ -10,7 +10,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "@grean/react-native-carousel-picker": "^0.0.1-alpha.10",
+    "@grean/react-native-carousel-picker": "^0.0.1",
     "@grean/react-native-metro-config-app-example": "^0.0.4",
     "@grean/react-native-scale-text": "^0.0.2",
     "expo": "~41.0.1",

@@ -133,8 +133,8 @@ const App = () => {
           {(item) =>
             <ScaleText
               {...{
-                fontSize: 160,
-                padding: '6%',
+                fontSize: 150,
+                padding: '4%',
                 textStyle: {
                   color: "white",
                   textAlign: 'center',

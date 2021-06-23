@@ -1263,10 +1263,10 @@
     lodash.pick "^4.4.0"
     lodash.template "^4.5.0"
 
-"@grean/react-native-carousel-picker@^0.0.1-alpha.10":
-  version "0.0.1-alpha.10"
-  resolved "https://registry.yarnpkg.com/@grean/react-native-carousel-picker/-/react-native-carousel-picker-0.0.1-alpha.10.tgz#9d1a94ca6e1cb37b8e4e4dd8ae3de0a0d89f7e32"
-  integrity sha512-bGnPSEuP3hZ29UiERnugZa6x3VtaqdS8QMKrA7KCstKZZRO28Mfm2xO3IwasdaWk2qYCclFWd4txDtyc+nRunA==
+"@grean/react-native-carousel-picker@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@grean/react-native-carousel-picker/-/react-native-carousel-picker-0.0.1.tgz#0b4075dc75caa7e939b298797375d28f0a720c11"
+  integrity sha512-4ypkn5yBfqWXBTWfJ482MbtjgFBeU24gcG98EVZQcKx+WtbNvrdBVgdPnqTHvFRzqIsetzAgsBfObEEwj0auYA==
 
 "@grean/react-native-metro-config-app-example@^0.0.4":
   version "0.0.4"
